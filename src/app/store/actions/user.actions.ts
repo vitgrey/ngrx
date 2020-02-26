@@ -2,7 +2,8 @@ import { Action } from '@ngrx/store';
 
 export enum UserActionType {
   Add = '[User Component] Add',
-  Remove = '[User Component] Remove'
+  Remove = '[User Component] Remove',
+  Edit = '[User Component] Edit'
 }
 
 export class ActionEx implements Action {
@@ -18,6 +19,12 @@ export class UserAdd implements ActionEx {
 
 export class UserRemove implements ActionEx {
   readonly type = UserActionType.Remove;
+  constructor(public payload: any) {
+  }
+}
+
+export class UserEdit implements ActionEx {
+  readonly type = UserActionType.Edit;
   constructor(public payload: any) {
   }
 }

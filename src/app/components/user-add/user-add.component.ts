@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from 'src/app/store/models/user';
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import { UserAdd } from 'src/app/store/actions/user.actions';
 
 @Component({
@@ -14,13 +14,13 @@ export class UserAddComponent {
   public users$: Observable<User[]>;
 
   constructor(private store: Store<{ users: User[] }>) {
-    this.users$ = store.pipe(select('users'))
+    this.users$ = store.pipe(select('users'));
   }
 
   public addUser(userName: string) {
     const user = new User();
     user.name = userName;
-    this.store.dispatch(new UserAdd(user))
+    this.store.dispatch(new UserAdd(user));
   }
 
 }

@@ -1,6 +1,6 @@
 import { ActionEx, UserActionType } from '../actions/user.actions';
 
-export const initialState = []
+export const initialState = [];
 
 export function UserReducer(state = initialState, action: ActionEx) {
 
@@ -14,6 +14,12 @@ export function UserReducer(state = initialState, action: ActionEx) {
         ...state.slice(0, action.payload),
         ...state.slice(action.payload + 1)
       ];
+
+      case UserActionType.Edit:
+        return [
+          ...state.slice(0, action.payload),
+          ...state.slice(action.payload + 1)
+        ];
 
     default:
       return state;
