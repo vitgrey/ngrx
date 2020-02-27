@@ -9,6 +9,7 @@ export enum UserActionType {
 export class ActionEx implements Action {
   readonly type;
   payload: any;
+  index?: any;
 }
 
 export class UserAdd implements ActionEx {
@@ -25,6 +26,6 @@ export class UserRemove implements ActionEx {
 
 export class UserEdit implements ActionEx {
   readonly type = UserActionType.Edit;
-  constructor(public payload: any) {
+  constructor(public payload: any, public index: any) {
   }
 }

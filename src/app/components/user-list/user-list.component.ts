@@ -24,8 +24,10 @@ export class UserListComponent {
     this.store.dispatch(new UserRemove(userIndex));
   }
 
-  public editUser(userIndex): void {
-    this.store.dispatch(new UserEdit(userIndex));
+  public editUser(userName: string, userIndex: any): void {
+    const user = new User();
+    user.name = userName;
+    this.store.dispatch(new UserEdit(user, userIndex));
   }
 
 }

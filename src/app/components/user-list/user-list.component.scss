@@ -4,14 +4,30 @@
   padding-top: 1%;
   background: rgb(197, 216, 215);
   border-radius: 3px;
-  height: 30px;
+  height: 55px;
   width: 50%;
   text-align: center;
-
 }
 
 .user button {
   margin-top: 0.5%;
   float: right;
   margin-right: 2%;
+}
+
+.user span {
+  float: left;
+}
+
+.edit {
+  margin-top: 1%;
+}
+
+.edit input {
+  width: 50%;
+  margin-top: 1%;
+}
+
+.edit button {
+  margin-top: 1%;
 }
