@@ -1,16 +1,16 @@
 <h3>List of user:</h3>
- 
+
 <div class="user" *ngFor="let user of users$ | async; let i = index">
 
-    <div>
-      <span>{{i + 1}}</span> {{user.name}}
-      <button (click)="removeUser(i)">Remove</button>
-      <button (click)="user[i]=true">Edit</button>
+  <div>
+    <span>{{i + 1}}</span> {{user.name}}
+    <button (click)="removeUser(i)">Remove</button>
+    <button (click)="user[i]=true">Edit</button>
 
-      <div class="edit" *ngIf="user[i]">
-        <input type="text" #inputEdit>
-        <button (click)="editUser(inputEdit.value,i)">Save</button>
-      </div>
+    <div class="edit" *ngIf="user[i]">
+      <input type="text" #inputEdit>
+      <button (click)="editUser(inputEdit.value,i)">Save</button>
     </div>
+  </div>
 
 </div>

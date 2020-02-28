@@ -4,7 +4,8 @@ export enum UserActionType {
   Add = '[User Component] Add',
   Remove = '[User Component] Remove',
   Edit = '[User Component] Edit',
-  Send = '[Customer Component] Send',
+  Send = '[User Component] Send',
+  Error = '[User Component] Error'
 }
 
 export class ActionEx implements Action {
@@ -35,4 +36,8 @@ export class UserEdit implements ActionEx {
   readonly type = UserActionType.Edit;
   constructor(public payload: any, public index: any) {
   }
+}
+
+export class UserError implements ActionEx {
+  readonly type = UserActionType.Error;
 }
