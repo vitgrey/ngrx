@@ -15,12 +15,12 @@ export function UserReducer(state = initialState, action: ActionEx) {
         ...state.slice(action.payload + 1)
       ];
 
-      case UserActionType.Edit:
-        return [
-          ...state.slice(0, action.index),
-             action.payload,
-          ...state.slice(action.index + 1)
-        ];
+    case UserActionType.Edit:
+      return [
+        ...state.slice(0, action.index),
+            action.payload,
+        ...state.slice(action.index + 1)
+      ];
 
     default:
       return state;

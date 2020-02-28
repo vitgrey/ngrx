@@ -3,18 +3,25 @@ import { Action } from '@ngrx/store';
 export enum UserActionType {
   Add = '[User Component] Add',
   Remove = '[User Component] Remove',
-  Edit = '[User Component] Edit'
+  Edit = '[User Component] Edit',
+  Send = '[Customer Component] Send',
 }
 
 export class ActionEx implements Action {
   readonly type;
-  payload: any;
+  payload?: any;
   index?: any;
 }
 
 export class UserAdd implements ActionEx {
   readonly type = UserActionType.Add;
   constructor(public payload: any) {
+  }
+}
+
+export class UserSend implements ActionEx {
+  readonly type = UserActionType.Send;
+  constructor() {
   }
 }
 
